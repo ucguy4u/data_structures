@@ -1,0 +1,17 @@
+cmd.exe
+/X
+/C
+""C:\Program Files\Java\jdk1.8.0_221\jre\..\bin\javadoc.exe" -J-Dhttp.proxyHost=www-proxy.us.oracle.com -J-Dhttp.proxyPort=80 -J-Dhttps.proxyHost=www-proxy.us.oracle.com -J-Dhttps.proxyPort=80 -J-Dhttp.nonProxyHosts="local.net" @options @argfile"
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\allclasses-frame.html = 1598102355260
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\allclasses-noframe.html = 1598102355263
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\argfile = 1598102354240
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\constant-values.html = 1598102355229
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\deprecated-list.html = 1598102355259
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\help-doc.html = 1598102355268
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\index-all.html = 1598102355254
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\index.html = 1598102355265
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\options = 1598102354238
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\overview-tree.html = 1598102355246
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\package-list = 1598102355210
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\script.js = 1598102355270
+C:\DATA\Workspace\sample\datastructures\datastructures\target\site\apidocs\stylesheet.css = 1598101068244
