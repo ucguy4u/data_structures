@@ -25,6 +25,7 @@
 					<additionalOptions>
 						<additionalOption>-Xdoclint:none</additionalOption>
 					</additionalOptions>
+					<reportOutputDirectory>./docs</reportOutputDirectory>
 				</configuration>
 			</plugin>
 			 <plugin>
