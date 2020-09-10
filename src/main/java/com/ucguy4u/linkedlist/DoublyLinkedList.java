@@ -1,5 +1,7 @@
 package com.ucguy4u.linkedlist;
 
+import java.util.NoSuchElementException;
+
 /**
  * <pre>
  * A doubly linked list (often abbreviated as DLL) is very much like a regular
@@ -22,9 +24,9 @@ package com.ucguy4u.linkedlist;
  *
  */
 //https://dzone.com/articles/doubly-linked-list-in-java
-public class DoublyLinkedList {
-	private static DLLNode head;
-	private static int numNodes = 0;
+public class DoublyLinkedList<AnyType> {
+	private DLLNode<AnyType> head;
+	private int numNodes = 0;
 
 	public DoublyLinkedList(Object data) {
 		head = new DLLNode(data);
@@ -35,12 +37,12 @@ public class DoublyLinkedList {
 		DoublyLinkedList dll = new DoublyLinkedList(12);
 		dll.addAtHead(10);
 		dll.addAtHead("uday");
-		dll.insertAfter(head.next.next, "new10");
+		dll.insertAfter("uday", "newuday");
 		dll.addAtEnd(99);
-		dll.deleteAfter(head.next);
+		//dll.deleteAfter(head);
 		// dll.clearList();
 		dll.size();
-	}
+	}	
 
 	/**
 	 * Nullify the head and set count to 0 to clear the doubly linkedlist
@@ -101,7 +103,7 @@ public class DoublyLinkedList {
 	 * 
 	 * @param node
 	 */
-	public void deleteAfter(DLLNode node) {
+	public void deleteAfter(DLLNode<AnyType> node) {
 		if (head == null || node == null) {
 			return;
 		}
@@ -172,17 +174,26 @@ public class DoublyLinkedList {
 	 * 7. Change previous of new_node's next node
 	 * </pre>
 	 */
-	public void insertAfter(DLLNode prev_node, Object data) {
-		if (prev_node == null) {
-			System.out.println("The given previous node cannot be null");
-			return;
-		}
-		DLLNode node = new DLLNode(data);
-		node.next = prev_node.next;
-		prev_node.next = node;
-		node.prev = prev_node;
-		if (node.next != null)
-			node.next.prev = node;
+	public void insertAfter(AnyType prev_node, AnyType data) {
+		if (isEmpty())
+			throw new NoSuchElementException("Element " + prev_node.toString() + " not found");
+
+		DLLNode<AnyType> current = head;
+
+		// Looping through until found
+		while (current != null && !current.data.equals(prev_node))
+			current = current.next;
+
+		if (current == null)
+			throw new NoSuchElementException("Element " + prev_node.toString() + " not found");
+
+		// Not null, value found
+
+		DLLNode<AnyType> newNode = new DLLNode<AnyType>(head, data, head.next);
+
+		if (current.next != null)
+			current.next.prev = newNode;
+		current.next = newNode;
 		numNodes++;
 	}
 
@@ -215,7 +226,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * Return true if size is 0; otherwise, it is false.
+	 * Checking whether the list is empty.
 	 * 
 	 * @return
 	 */
@@ -224,7 +235,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * Method will print the current data present in the linkedlist
+	 * Method will return the current size of the linked lists
 	 */
 	public void size() {
 		DLLNode temp = head;
@@ -235,17 +246,4 @@ public class DoublyLinkedList {
 		System.out.print("Current Size of DLL : " + numNodes);
 	}
 
-	class DLLNode {
-		Object data;
-		DLLNode prev = null;
-		DLLNode next = null;
-
-		public DLLNode(Object dat) {
-			data = dat;
-		}
-
-		public Object getData() {
-			return data;
-		}
-	}
 }

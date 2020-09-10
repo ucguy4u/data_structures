@@ -1,6 +1,6 @@
 package com.ucguy4u.linkedlist;
 
-import com.ucguy4u.linkedlist.SinglyLinkList;
+import com.ucguy4u.linkedlist.DoublyLinkedList;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

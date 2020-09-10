@@ -150,17 +150,17 @@ public class SinglyLinkList {
 		}
 	}
 
-	class Node {
-		Node next;
-		Object data;
-
-		public Node(Object dat) {
-			data = dat;
-		}
-
-		public Object getData() {
-			return data;
-		}
-	}
+//	class Node {
+//		Node next;
+//		Object data;
+//
+//		public Node(Object dat) {
+//			data = dat;
+//		}
+//
+//		public Object getData() {
+//			return data;
+//		}
+//	}
 
 }
