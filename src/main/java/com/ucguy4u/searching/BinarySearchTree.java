@@ -1,4 +1,4 @@
-//package com.ucguy4u.searching;
+package com.ucguy4u.searching;
 
 public class BinarySearchTree {
 
@@ -37,11 +37,12 @@ public class BinarySearchTree {
             return root;
         }
         // Recursively traverse down the tree
-        if (key < root.key) {
-            insertrec(root.left, key);
+      if (key < root.key) {
+            root.left = insertrec(root.left, key);
         } else if (key > root.key) {
-            insertrec(root.right, key);
+            root.right = insertrec(root.right, key);
         }
+
 
         return root;
     }
@@ -61,9 +62,7 @@ public class BinarySearchTree {
     public static void main(String args[]) {
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(5);
-
         bst.insert(25);
-
         bst.insert(51);
         bst.inorder();
     }
